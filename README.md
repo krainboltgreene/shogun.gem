@@ -14,7 +14,7 @@ shogun
 
 ![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Minamoto_no_Yoritomo.jpg/471px-Minamoto_no_Yoritomo.jpg)
 
-Shogun is a Ruby HTTP API framework, architecture, and best practice  functionality in a core package. It's collection of behavior is meant to be included in a project's classes and modules.
+`shogun` is a Ruby HTTP API framework, architecture, and set of best practices  rolled into a core package. It's collection of behavior is meant to be included in a project's classes and modules.
 
 
 Using
