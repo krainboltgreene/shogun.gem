@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Shogun.gem by krainboltgreene</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/krainboltgreene/shogun.gem">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Shogun.gem</h1>
+            <h2>A HTTP API framework core library</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/krainboltgreene/shogun.gem/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/krainboltgreene/shogun.gem/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <ul>
+<li><a href="https://codeclimate.com/github/krainboltgreene/shogun.gem"><img src="http://img.shields.io/codeclimate/github/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Quality"></a></li>
+<li><a href="https://codeclimate.com/github/krainboltgreene/shogun.gem"><img src="http://img.shields.io/codeclimate/coverage/github/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Coverage"></a></li>
+<li><a href="https://travis-ci.org/krainboltgreene/shogun.gem"><img src="http://img.shields.io/travis-ci/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Build"></a></li>
+<li><a href="https://gemnasium.com/krainboltgreene/shogun.gem"><img src="http://img.shields.io/gemnasium/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Dependencies"></a></li>
+<li><a href="https://rubygems.org/gems/shogun"><img src="http://img.shields.io/gem/dtv/shogun.svg?style=flat-square" alt="Downloads"></a></li>
+<li><a href="http://github.com/krainboltgreene/shogun.gem/tags"><img src="http://img.shields.io/github/tag/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Tags"></a></li>
+<li><a href="http://github.com/krainboltgreene/shogun.gem/releases"><img src="http://img.shields.io/github/release/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Releases"></a></li>
+<li><a href="http://github.com/krainboltgreene/shogun.gem/issues"><img src="http://img.shields.io/github/issues/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Issues"></a></li>
+<li><a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a></li>
+<li><a href="https://rubygems.org/gems/shogun"><img src="http://img.shields.io/gem/v/shogun.svg?style=flat-square" alt="Version"></a></li>
+</ul>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Minamoto_no_Yoritomo.jpg/471px-Minamoto_no_Yoritomo.jpg" alt=""></p>
+
+<p>Shogun is a Ruby HTTP API framework, architecture, and best practice  functionality in a core package. It's collection of behavior is meant to be included in a project's classes and modules.</p>
+
+<h1>
+<a name="using" class="anchor" href="#using"><span class="octicon octicon-link"></span></a>Using</h1>
+
+<p>To start using <code>shogun</code> you'll need to have these classes defined:</p>
+
+<ul>
+<li>
+<strong>Endpoint</strong>, routes all request to the right control</li>
+<li>
+<strong>Control</strong>, which contains the process the request is made</li>
+<li>
+<strong>Normalizer</strong>, which cleans/sanitizes incoming data</li>
+<li>
+<strong>Validators</strong>, a object that determines the validity of incoming data</li>
+<li>
+<strong>Model</strong>, which persists, looks up, or changes the database</li>
+<li>
+<strong>Presenter</strong>, which decorates the model</li>
+<li>
+<strong>Denormalizer</strong>, manages and formats the outgoing data.</li>
+</ul>
+
+<p>Each of these will probably be scoped to the resource, ie: You'll have a <code>Account::Create::Control</code> and <code>Account::Presenter</code>.</p>
+
+<p>Each project will also need a <code>Server</code> class which mounts onto Rack. Look to each of the pieces documentation to learn more about what you can change.</p>
+
+<h1>
+<a name="installing" class="anchor" href="#installing"><span class="octicon octicon-link"></span></a>Installing</h1>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem "shogun", "~&gt; 1.0"
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself with:</p>
+
+<pre><code>$ gem install shogun
+</code></pre>
+
+<h1>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+
+<h1>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h1>
+
+<ul>
+<li>1.0.0: Initial release</li>
+</ul>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>Copyright (c) 2014 Kurtis Rainbolt-Greene</p>
+
+<p>MIT License</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/krainboltgreene">krainboltgreene</a> can be found on <a href="https://github.com/krainboltgreene/shogun.gem">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
