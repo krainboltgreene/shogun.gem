@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version = Shogun::VERSION
   spec.authors = ["Kurtis Rainbolt-Greene"]
   spec.email = ["me@kurtisrainboltgreene.name"]
-  spec.summary = %q{A core library for an HTTP API}
+  spec.summary = %q{The core library for an HTTP API framework}
   spec.description = spec.summary
   spec.homepage = "http://krainboltgreene.github.io/shogun.gem"
   spec.license = "MIT"

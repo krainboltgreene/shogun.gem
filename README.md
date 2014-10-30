@@ -12,14 +12,27 @@ shogun
   - [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
   - [![Version](http://img.shields.io/gem/v/shogun.svg?style=flat-square)](https://rubygems.org/gems/shogun)
 
+![](http://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Minamoto_no_Yoritomo.jpg/471px-Minamoto_no_Yoritomo.jpg)
 
-TODO: Write a gem description
+Shogun is a Ruby HTTP API framework, architecture, and best practice  functionality in a core package. It's collection of behavior is meant to be included in a project's classes and modules.
 
 
 Using
 =====
 
-TODO: Write usage instructions here
+To start using `shogun` you'll need to have these classes defined:
+
+  * **Endpoint**, routes all request to the right control
+  * **Control**, which contains the process the request is made
+  * **Normalizer**, which cleans/sanitizes incoming data
+  * **Validators**, a object that determines the validity of incoming data
+  * **Model**, which persists, looks up, or changes the database
+  * **Presenter**, which decorates the model
+  * **Denormalizer**, manages and formats the outgoing data.
+
+Each of these will probably be scoped to the resource, ie: You'll have a `Account::Create::Control` and `Account::Presenter`.
+
+Each project will also need a `Server` class which mounts onto Rack. Look to each of the pieces documentation to learn more about what you can change.
 
 
 Installing
