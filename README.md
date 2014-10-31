@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 1.0"
+    gem "shogun", "~> 2.0"
 
 And then execute:
 
@@ -64,6 +64,10 @@ Contributing
 Changelog
 =========
 
+  - 2.0.0:
+    * Getting rid of gems we don't care about
+    * Adding some tests to a few classes
+    * Adding some real documentation (and logo!)
   - 1.0.0: Initial release
 
 
