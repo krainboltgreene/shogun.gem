@@ -1,7 +1,6 @@
 module Shogun
   module Server
     def serve
-      @rack.use(Rack::Lineprof) if ENV["RACK_ENV"] == "development"
       @rack.use(Rack::Log, @logger)
       @rack.use(Rack::Runtime)
       @rack.use(ActiveRecord::ConnectionAdapters::ConnectionManagement)
