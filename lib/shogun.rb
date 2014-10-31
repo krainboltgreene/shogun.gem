@@ -1,6 +1,5 @@
 require "adamantium"
 require "rack-protection"
-require "rack-commonlogger"
 require "rack-body_serializer"
 require "rack-authentication_bearer"
 require "rack-body_deserializer"
