@@ -64,6 +64,8 @@ Contributing
 Changelog
 =========
 
+  - 2.1.1:
+    * Reverting the ordering of the ActiveRecord related middleware, since it causes a big body bug.
   - 2.1.0:
     * Reorganizing the rack to avoid bad requests taking up resources
     * Adding CORS support for browser clients
