@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "adamantium", "~> 0.2"
+  spec.add_runtime_dependency "rack", "~> 1.5"
   spec.add_runtime_dependency "rack-protection", "~> 1.5"
   spec.add_runtime_dependency "rack-body_serializer", "~> 1.0"
   spec.add_runtime_dependency "rack-body_deserializer", "~> 1.0"

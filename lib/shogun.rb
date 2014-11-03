@@ -1,4 +1,5 @@
 require "adamantium"
+require "rack"
 require "rack-protection"
 require "rack-body_serializer"
 require "rack-authentication_bearer"
