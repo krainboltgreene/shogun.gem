@@ -7,7 +7,7 @@ describe Shogun::Denormalizer do
     end
   end
   let(:denormalizer) { denormalizer_klass.new(object: presenter, fields: fields) }
-  let(:document_key) { "accounts" }
+  let(:namespace) { "accounts" }
   let(:presenter) { instance_double("Presenter") }
   let(:links) { { "a" => "b" } }
   let(:meta) { { "c" => "d" } }
@@ -23,7 +23,7 @@ describe Shogun::Denormalizer do
     allow(presenter).to receive(:linked).and_return(linked)
     allow(presenter).to receive(:a).and_return(a)
     allow(presenter).to receive(:b).and_return(b)
-    allow(denormalizer).to receive(:document_key).and_return(document_key)
+    allow(denormalizer).to receive(:namespace).and_return(namespace)
     allow(denormalizer).to receive(:mapping).and_return(mapping)
   end
 
@@ -46,8 +46,8 @@ describe Shogun::Denormalizer do
       expect(as_document).to have_key(Shogun::Denormalizer::LINKED_KEY)
     end
 
-    it "contains the document key" do
-      expect(as_document).to have_key(document_key)
+    it "contains the namespace key" do
+      expect(as_document).to have_key(namespace)
     end
   end
 end

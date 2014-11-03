@@ -62,7 +62,6 @@ module Shogun
 
     require_relative "control/null"
 
-
     def to_a
       [status, headers, body]
     end
