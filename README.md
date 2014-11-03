@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 2.1"
+    gem "shogun", "~> 3.0"
 
 And then execute:
 
@@ -64,6 +64,8 @@ Contributing
 Changelog
 =========
 
+  - 3.0.0:
+    * [BREAKING]: Moving from constants to private methods, especially for namespace
   - 2.1.1:
     * Reverting the ordering of the ActiveRecord related middleware, since it causes a big body bug.
   - 2.1.0:
@@ -71,7 +73,7 @@ Changelog
     * Adding CORS support for browser clients
     * Adding explicit rack requirement, because ruby :|
   - 2.0.0:
-    * Getting rid of gems we don't care about
+    * [BREAKING]: Getting rid of gems we don't care about
     * Adding some tests to a few classes
     * Adding some real documentation (and logo!)
   - 1.0.0:
