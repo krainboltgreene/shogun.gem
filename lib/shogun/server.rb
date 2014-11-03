@@ -18,6 +18,7 @@ module Shogun
       @rack.use(Rack::BodySerializer, serialization_map, default_serializer)
       @rack.use(ActiveRecord::ConnectionAdapters::ConnectionManagement)
       @rack.use(ActiveRecord::QueryCache)
+      @rack.use(Rack::Cors, &cors)
       @rack.run(Shogun::Dispatch.new(logger: @logger, &endpoints))
     end
 
@@ -43,6 +44,10 @@ module Shogun
 
     private def accept_types
       self.class.const_get("ACCEPT_TYPES")
+    end
+
+    private def cors
+      self.class.const_get("CORS")
     end
   end
 end
