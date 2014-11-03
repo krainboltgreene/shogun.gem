@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 2.0"
+    gem "shogun", "~> 2.1"
 
 And then execute:
 
@@ -64,11 +64,16 @@ Contributing
 Changelog
 =========
 
+  - 2.1.0:
+    * Reorganizing the rack to avoid bad requests taking up resources
+    * Adding CORS support for browser clients
+    * Adding explicit rack requirement, because ruby :|
   - 2.0.0:
     * Getting rid of gems we don't care about
     * Adding some tests to a few classes
     * Adding some real documentation (and logo!)
-  - 1.0.0: Initial release
+  - 1.0.0:
+    * Initial release
 
 
 License
