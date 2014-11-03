@@ -36,9 +36,33 @@ module Shogun
       ActiveRecord::LogSubscriber.logger = @logger
       ActiveRecord::LogSubscriber.colorize_logging = false
       ActiveRecord::Base.time_zone_aware_attributes = true
-      ActiveRecord::Base.default_timezone = (self.class.const_get("TIMEZONE") || self.class.const_get("DEFAULT_TIMEZONE")).to_sym
+      ActiveRecord::Base.default_timezone = (timezone || default_timezone).to_sym
       ActiveRecord::Base.logger = @logger
-      ActiveRecord::Base.establish_connection("#{self.class.const_get("URL")}?#{self.class.const_get("CONFIGURATION").to_query}")
+      ActiveRecord::Base.establish_connection(uri)
+    end
+
+    private def url
+      self.class.const_get("URL")
+    end
+
+    private def uri
+      "#{url}?#{query}"
+    end
+
+    private def query
+      configuration.to_query
+    end
+
+    private def configuration
+      self.class.const_get("CONFIGURATION")
+    end
+
+    private def timezone
+      self.class.const_get("TIMEZONE")
+    end
+
+    private def default_timezone
+      self.class.const_get("DEFAULT_TIMEZONE")
     end
   end
 end

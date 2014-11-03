@@ -27,5 +27,9 @@ module Shogun
     private def metadata
       self.class.const_get("METADATA")
     end
+
+    private def namespace
+      self.class.const_get("NAMESPACE")
+    end
   end
 end

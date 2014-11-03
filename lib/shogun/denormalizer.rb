@@ -14,7 +14,7 @@ module Shogun
 
     def as_document
       {
-        document_key => document,
+        namespace => document,
         meta_key => @meta,
         links_key => @links,
         linked_key => @linked
@@ -31,8 +31,8 @@ module Shogun
       end
     end
 
-    private def document_key
-      self.class.const_get("DOCUMENT_KEY")
+    private def namespace
+      self.class.const_get("NAMESPACE")
     end
 
     private def meta_key
