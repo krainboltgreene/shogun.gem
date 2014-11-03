@@ -9,6 +9,7 @@ require "rack-chunker"
 require "rack-content_length_setter"
 require "rack-runtime"
 require "rack-log"
+require "rack/cors"
 require "scrawl"
 require "active_record"
 
