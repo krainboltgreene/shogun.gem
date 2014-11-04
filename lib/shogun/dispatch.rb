@@ -37,7 +37,15 @@ module Shogun
 
       control = route.control.new(payload: payload)
 
-      control.to_a
+      @logger.debug(self.class) do
+        "Request `#{lookup.request}` handled by `#{route.control}`"
+      end
+
+      control.to_a.tap do |response|
+        @logger.debug(self.class) do
+          "Response `#{response[0]}` with `#{response[2]}`"
+        end
+      end
     end
 
     def push(route:)
