@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 3.0"
+    gem "shogun", "~> 3.1"
 
 And then execute:
 
@@ -63,7 +63,10 @@ Contributing
 
 Changelog
 =========
-
+  - 3.1.0:
+    * `Presenters` now responds to all `Enumerable` functions
+    * The `Presenter` and `Presenters` classes now knows how to handle included associations
+    * We now log request and response information on `DEBUG` mode
   - 3.0.0:
     * [BREAKING]: Moving from constants to private methods, especially for namespace
   - 2.1.1:
