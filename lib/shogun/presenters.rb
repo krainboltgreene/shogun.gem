@@ -1,5 +1,7 @@
 module Shogun
   class Presenters
+    include Enumerable
+
     def initialize(resources:, cast:, includes: [], meta: {}, links: {}, linked: {})
       @sources = resources.map do |resource|
         cast.new(resource: resource, includes: includes)
@@ -9,8 +11,8 @@ module Shogun
       @linked = linked
     end
 
-    def map(&block)
-      @sources.map(&block)
+    def each(&block)
+      @sources.each(&block)
     end
 
     def meta
