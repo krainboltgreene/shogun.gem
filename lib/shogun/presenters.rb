@@ -1,8 +1,8 @@
 module Shogun
   class Presenters
-    def initialize(resources:, cast:, meta: {}, links: {}, linked: {})
+    def initialize(resources:, cast:, includes: [], meta: {}, links: {}, linked: {})
       @sources = resources.map do |resource|
-        cast.new(resource: resource)
+        cast.new(resource: resource, includes: includes)
       end
       @meta = meta
       @links = links

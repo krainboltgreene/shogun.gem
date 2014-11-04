@@ -1,7 +1,8 @@
 module Shogun
   module Presenter
-    def initialize(resource:, meta: {}, links: {}, linked: {})
+    def initialize(resource:, includes: [], meta: {}, links: {}, linked: {})
       @source = resource
+      @includes = includes
       @meta = meta
       @links = links
       @linked = linked
@@ -21,7 +22,7 @@ module Shogun
 
     def links
       @links.tap do |hash|
-        associations.each do |name|
+        includes.each do |name|
           case association(name).macro
           when :has_many
             hash.store(name, source.public_send(name).pluck(:id))
@@ -38,10 +39,6 @@ module Shogun
       ENV["API_HOST"]
     end
 
-    private def associations
-      self.class.const_get("ASSOCIATIONS")
-    end
-
     private def namespace
       self.class.const_get("NAMESPACE")
     end
@@ -52,6 +49,10 @@ module Shogun
 
     private def source
       @source
+    end
+
+    private def includes
+      @includes
     end
   end
 end
