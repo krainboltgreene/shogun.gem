@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 3.1"
+    gem "shogun", "~> 3.2"
 
 And then execute:
 
@@ -63,6 +63,9 @@ Contributing
 
 Changelog
 =========
+
+  - 3.2.0:
+    * Opening an interface for defining the HTTP Origin Protection whitelist.
   - 3.1.0:
     * `Presenters` now responds to all `Enumerable` functions
     * The `Presenter` and `Presenters` classes now knows how to handle included associations
