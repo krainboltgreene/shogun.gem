@@ -4,7 +4,7 @@ module Shogun
       @rack.use(Rack::Log, @logger)
       @rack.use(Rack::Runtime)
       @rack.use(Rack::Protection::RemoteReferrer)
-      @rack.use(Rack::Protection::HttpOrigin)
+      @rack.use(Rack::Protection::HttpOrigin, origin_whitelist: origin_whitelist)
       @rack.use(Rack::Protection::EscapedParams)
       @rack.use(Rack::Protection::XSSHeader)
       @rack.use(Rack::Protection::FrameOptions)
@@ -48,6 +48,10 @@ module Shogun
 
     private def cors
       self.class.const_get("CORS")
+    end
+
+    private def origin_whitelist
+      self.class.const_get("ORIGIN_WHITELIST")
     end
   end
 end
