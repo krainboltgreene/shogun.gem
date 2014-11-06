@@ -1,51 +1,36 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
+    <meta name="description" content="Shogun.gem : A HTTP API framework core library">
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Shogun.gem by krainboltgreene</title>
+    <title>Shogun.gem</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/krainboltgreene/shogun.gem">View on GitHub</a>
-    <div class="shell">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Shogun.gem</h1>
-            <h2>A HTTP API framework core library</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/krainboltgreene/shogun.gem">View on GitHub</a>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/krainboltgreene/shogun.gem/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/krainboltgreene/shogun.gem/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+          <h1 id="project_title">Shogun.gem</h1>
+          <h2 id="project_tagline">A HTTP API framework core library</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/krainboltgreene/shogun.gem/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/krainboltgreene/shogun.gem/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <ul>
 <li><a href="https://codeclimate.com/github/krainboltgreene/shogun.gem"><img src="http://img.shields.io/codeclimate/github/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Quality"></a></li>
 <li><a href="https://codeclimate.com/github/krainboltgreene/shogun.gem"><img src="http://img.shields.io/codeclimate/coverage/github/krainboltgreene/shogun.gem.svg?style=flat-square" alt="Coverage"></a></li>
@@ -61,10 +46,10 @@
 
 <p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Minamoto_no_Yoritomo.jpg/471px-Minamoto_no_Yoritomo.jpg" alt=""></p>
 
-<p>Shogun is a Ruby HTTP API framework, architecture, and best practice  functionality in a core package. It's collection of behavior is meant to be included in a project's classes and modules.</p>
+<p><code>shogun</code> is a Ruby HTTP API framework, architecture, and set of best practices  rolled into a core package. It's collection of behavior is meant to be included in a project's classes and modules.</p>
 
 <h1>
-<a name="using" class="anchor" href="#using"><span class="octicon octicon-link"></span></a>Using</h1>
+<a id="using" class="anchor" href="#using" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using</h1>
 
 <p>To start using <code>shogun</code> you'll need to have these classes defined:</p>
 
@@ -90,11 +75,11 @@
 <p>Each project will also need a <code>Server</code> class which mounts onto Rack. Look to each of the pieces documentation to learn more about what you can change.</p>
 
 <h1>
-<a name="installing" class="anchor" href="#installing"><span class="octicon octicon-link"></span></a>Installing</h1>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h1>
 
 <p>Add this line to your application's Gemfile:</p>
 
-<pre><code>gem "shogun", "~&gt; 1.0"
+<pre><code>gem "shogun", "~&gt; 3.2"
 </code></pre>
 
 <p>And then execute:</p>
@@ -108,7 +93,7 @@
 </code></pre>
 
 <h1>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
 
 <ol>
 <li>Fork it</li>
@@ -119,14 +104,62 @@
 </ol>
 
 <h1>
-<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h1>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h1>
 
 <ul>
-<li>1.0.0: Initial release</li>
+<li>3.2.0:
+
+<ul>
+<li>Opening an interface for defining the HTTP Origin Protection whitelist.</li>
+</ul>
+</li>
+<li>3.1.0:
+
+<ul>
+<li>
+<code>Presenters</code> now responds to all <code>Enumerable</code> functions</li>
+<li>The <code>Presenter</code> and <code>Presenters</code> classes now knows how to handle included associations</li>
+<li>We now log request and response information on <code>DEBUG</code> mode</li>
+</ul>
+</li>
+<li>3.0.0:
+
+<ul>
+<li>[BREAKING]: Moving from constants to private methods, especially for namespace</li>
+</ul>
+</li>
+<li>2.1.1:
+
+<ul>
+<li>Reverting the ordering of the ActiveRecord related middleware, since it causes a big body bug.</li>
+</ul>
+</li>
+<li>2.1.0:
+
+<ul>
+<li>Reorganizing the rack to avoid bad requests taking up resources</li>
+<li>Adding CORS support for browser clients</li>
+<li>Adding explicit rack requirement, because ruby :|</li>
+</ul>
+</li>
+<li>2.0.0:
+
+<ul>
+<li>[BREAKING]: Getting rid of gems we don't care about</li>
+<li>Adding some tests to a few classes</li>
+<li>Adding some real documentation (and logo!)</li>
+</ul>
+</li>
+<li>1.0.0:
+
+<ul>
+<li>Initial release</li>
+</ul>
+</li>
 </ul>
 
 <h1>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
 <p>Copyright (c) 2014 Kurtis Rainbolt-Greene</p>
 
@@ -151,21 +184,17 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
       </section>
+    </div>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/krainboltgreene">krainboltgreene</a> can be found on <a href="https://github.com/krainboltgreene/shogun.gem">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Shogun.gem maintained by <a href="https://github.com/krainboltgreene">krainboltgreene</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
-
     </div>
 
     
+
   </body>
 </html>
