@@ -3,7 +3,6 @@ module Shogun
     def serve
       @rack.use(Rack::Log, @logger)
       @rack.use(Rack::Runtime)
-      @rack.use(Rack::Protection::RemoteReferrer)
       @rack.use(Rack::Protection::HttpOrigin, origin_whitelist: origin_whitelist)
       @rack.use(Rack::Protection::EscapedParams)
       @rack.use(Rack::Protection::XSSHeader)
