@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 3.3"
+    gem "shogun", "~> 3.4"
 
 And then execute:
 
@@ -63,6 +63,8 @@ Contributing
 
 Changelog
 =========
+  - 3.4.0:
+    * Same as 3.3.0, accidentally released as 3.4.0.
   - 3.3.0:
     * We no longer enforce referrer host sameness, preventing browser clients from using the API.
   - 3.2.0:
