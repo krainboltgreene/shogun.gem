@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 3.2"
+    gem "shogun", "~> 3.3"
 
 And then execute:
 
@@ -63,7 +63,8 @@ Contributing
 
 Changelog
 =========
-
+  - 3.3.0:
+    * We no longer enforce referrer host sameness, preventing browser clients from using the API.
   - 3.2.0:
     * Opening an interface for defining the HTTP Origin Protection whitelist.
   - 3.1.0:
