@@ -16,12 +16,16 @@ module Shogun
       @meta
     end
 
-    def linked
-      @linked
-    end
-
     def links
       @links.tap do |hash|
+        includes.each do |name|
+          hash.store(name, [host, name, "?#{name}=#{id}"].join("/"))
+        end
+      end
+    end
+
+    def linked
+      @linked.tap do |hash|
         includes.each do |name|
           case association(name).macro
           when :has_many
@@ -44,7 +48,11 @@ module Shogun
     end
 
     private def association(name)
-      source.class.reflections[name.to_sym]
+      associations[name.to_sym]
+    end
+
+    private def associations
+      source.class.reflections
     end
 
     private def source
