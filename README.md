@@ -40,7 +40,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "shogun", "~> 3.4"
+    gem "shogun", "~> 4.0"
 
 And then execute:
 
@@ -63,6 +63,8 @@ Contributing
 
 Changelog
 =========
+  - 4.0.0:
+    * ... So we totally misunderstood how `links` and `linked` keys works in JSONAPI. We've rectifid the issue and now it's a little more robust.
   - 3.4.0:
     * Same as 3.3.0, accidentally released as 3.4.0.
   - 3.3.0:
