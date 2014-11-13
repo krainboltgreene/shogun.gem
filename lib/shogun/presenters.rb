@@ -3,6 +3,7 @@ module Shogun
     include Enumerable
 
     def initialize(resources:, cast:, includes: [], meta: {}, links: {}, linked: {})
+      @cast = @cast
       @sources = resources.map do |resource|
         cast.new(resource: resource, includes: includes)
       end
@@ -24,7 +25,15 @@ module Shogun
     end
 
     def links
-      @links
+      @links.tap do |hash|
+        includes.each do |name|
+          hash.store("#{namespace}.#{name}", [host, name, "{#{namespace}.#{name}}"].join("/"))
+        end
+      end
+    end
+
+    private def namespace
+      @cast.const_get("NAMESPACE")
     end
   end
 end
