@@ -40,7 +40,7 @@ module Shogun
     end
 
     private def host
-      ENV["API_HOST"]
+      ENV["SERVER_HOST"]
     end
 
     private def namespace
