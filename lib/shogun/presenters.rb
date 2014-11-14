@@ -7,6 +7,7 @@ module Shogun
       @sources = resources.map do |resource|
         cast.new(resource: resource, includes: includes)
       end
+      @includes = includes
       @meta = meta
       @links = links
       @linked = linked
@@ -34,6 +35,10 @@ module Shogun
 
     private def namespace
       @cast.const_get("NAMESPACE")
+    end
+
+    private def includes
+      @includes
     end
   end
 end
