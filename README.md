@@ -63,6 +63,8 @@ Contributing
 
 Changelog
 =========
+  - 4.0.1:
+    * We forgot to provide an private interface for the includes list.
   - 4.0.0:
     * ... So we totally misunderstood how `links` and `linked` keys works in JSONAPI. We've rectifid the issue and now it's a little more robust.
   - 3.4.0:
