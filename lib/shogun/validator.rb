@@ -4,7 +4,7 @@ module Shogun
       verifiers.all?(&:valid?)
     end
 
-    def to_array
+    def invalids
       verifiers.reject(&:valid?)
     end
 
