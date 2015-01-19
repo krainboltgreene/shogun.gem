@@ -1,18 +1,8 @@
 #!/usr/bin/env ruby
 
-require "shogun"
+require "shogun/command"
 require "pry"
-require Dir["./lib/*.rb"].first
 
-case ARGV.shift
-when "database" then
-  case ARGV.shift
-  when "reset" then
-    Shogun::Database.setup!(logger: Logger.new(STDOUT))
-  when "console" then
-    Shogun::Database.new(logger: Logger.new(STDOUT))
-    binding.pry
-  end
-when "console" then
-  binding.pry
-end
+# shogun [namespace] [command] [options]
+# shogun blankapi generate flags
+Shogun::Command.new(*ARGV)
