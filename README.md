@@ -63,6 +63,13 @@ Contributing
 
 Changelog
 =========
+  - 6.1.0:
+    * Created classes and a structure for the different bin commands
+    * Created a scaffolding system using architecture
+  - 6.0.0:
+    * Adding more tests for validators
+    * Renaming the "out" method for validators to make more sense
+  - 5.0.0: We "skipped" this version by accident.
   - 4.0.1:
     * We forgot to provide an private interface for the includes list.
   - 4.0.0:
