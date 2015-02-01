@@ -1,6 +1,6 @@
 module Shogun
   class Command
-    class Generate
+    class Resource
       include Architecture
 
       def initialize(namespace, resource, *parameters)
@@ -9,13 +9,13 @@ module Shogun
         @parameters = parameters
 
         architecture(source: scaffold_directory, destination: namespace_directory) do |architect|
-          architect.copy file: "resource.rb", as: "#{resource}.rb", context: context()
-          architect.create directory: architect.destination(resource)
-          architect.within source: "resource", destination: resource do |scope|
-            scope.copy file: "endpoint.rb", context: context()
-            scope.copy file: "model.rb", context: context()
-            scope.copy file: "null.rb", context: context()
-            scope.copy file: "presenter.rb", context: context()
+          architect.copy(file: "resource.rb", as: "#{resource}.rb", context: context)
+          architect.create(directory: architect.destination(resource))
+          architect.within(source: "resource", destination: resource) do |scope|
+            scope.copy(file: "endpoint.rb", context: context)
+            scope.copy(file: "model.rb", context: context)
+            scope.copy(file: "null.rb", context: context)
+            scope.copy(file: "presenter.rb", context: context)
             subresource(scope, "show")
             subresource(scope, "list")
             subresource(scope, "create")
@@ -26,14 +26,14 @@ module Shogun
       end
 
       private def subresource(architect, name)
-        architect.copy file: "#{name}.rb", context: context()
-        architect.create directory: architect.destination(name)
-        architect.within source: name, destination: name do |scope|
-          scope.copy file: "authorizer.rb", context: context()
-          scope.copy file: "control.rb", context: context()
-          scope.copy file: "denormalizer.rb", context: context()
-          scope.copy file: "normalizer.rb", context: context()
-          scope.copy file: "validator.rb", context: context()
+        architect.copy(file: "#{name}.rb", context: context)
+        architect.create(directory: architect.destination(name))
+        architect.within(source: name, destination: name) do |scope|
+          scope.copy(file: "authorizer.rb", context: context)
+          scope.copy(file: "control.rb", context: context)
+          scope.copy(file: "denormalizer.rb", context: context)
+          scope.copy(file: "normalizer.rb", context: context)
+          scope.copy(file: "validator.rb", context: context)
         end
       end
 
