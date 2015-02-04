@@ -1,0 +1,6 @@
+/.foreman
+/Vendorfile
+/spec/
+/test/
+/doc/
+/.rvmrc
