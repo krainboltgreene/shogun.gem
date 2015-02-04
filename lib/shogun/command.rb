@@ -4,16 +4,21 @@ require "shogun"
 
 module Shogun
   class Command
-    require_relative "command/resource"
+    require_relative "command/new"
+    require_relative "command/generate"
 
     def initialize(namespace, command, *parameters)
       @namespace = namespace
       @command = command
       @parameters = parameters
+    end
 
+    def execute
       case @command
-      when "resource" then
-        ::Shogun::Command::Resource.new(@namespace, *@parameters)
+      when "new" then
+        ::Showgun::Command::New.new(@namespace, *@parameters).execute
+      when "generate" then
+        ::Shogun::Command::Generate.new(@namespace, *@parameters).execute
       when "database" then
         case ARGV.shift
         when "reset" then

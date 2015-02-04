@@ -1,13 +1,15 @@
 module Shogun
   class Command
-    class Resource
+    class Generate
       include Architecture
 
       def initialize(namespace, resource, *parameters)
         @namespace = namespace
         @resource = resource
         @parameters = parameters
+      end
 
+      def execute
         architecture(source: scaffold_directory, destination: namespace_directory) do |architect|
           architect.copy(file: "resource.rb", as: "#{resource}.rb", context: context)
           architect.create(directory: architect.destination(resource))
@@ -38,7 +40,7 @@ module Shogun
       end
 
       private def scaffold_directory
-        File.join(gem_directory, "scaffold")
+        File.join(gem_directory, "scaffold", "resource")
       end
 
       private def namespace_directory

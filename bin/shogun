@@ -5,4 +5,4 @@ require "pry"
 
 # shogun [namespace] [command] [options]
 # shogun blankapi generate flags
-Shogun::Command.new(*ARGV)
+Shogun::Command.new(*ARGV).execute
