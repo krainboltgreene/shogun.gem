@@ -27,27 +27,105 @@ module Shogun
             scope.copy(file: "Procfile", context: context)
             scope.copy(file: "Rakefile", context: context)
             scope.copy(file: "README.md", context: context)
-            setup_config(scope)
+            scope.create(directory: scope.destination("config"))
+            scope.within(source: "config", destination: "config") do |scope|
+              scope.copy(file: "puma.rb", context: context)
+            end
+            scope.create(directory: scope.destination("lib"))
+            scope.within(source: "lib", destination: "lib") do |scope|
+              scope.copy(file: "namespace.rb", as: "#{namespace}.rb", context: context)
+              scope.create(directory: scope.destination(namespace))
+              scope.within(source: "namespace", destination: namespace) do |scope|
+                scope.copy(file: "server.rb", context: context)
+                scope.copy(file: "accounts.rb", context: context)
+                scope.create(directory: scope.destination("accounts"))
+                scope.within(source: "accounts", destination: "accounts") do |scope|
+                  scope.copy(file: "create.rb", context: context)
+                  scope.create(directory: scope.destination("create"))
+                  scope.within(source: "create", destination: "create") do |scope|
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "destroy.rb", context: context)
+                  scope.create(directory: scope.destination("destroy"))
+                  scope.within(source: "destroy", destination: "destroy") do |scope|
+                    scope.copy(file: "authorizer.rb", context: context)
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "list.rb", context: context)
+                  scope.create(directory: scope.destination("list"))
+                  scope.within(source: "list", destination: "list") do |scope|
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "show.rb", context: context)
+                  scope.create(directory: scope.destination("show"))
+                  scope.within(source: "show", destination: "show") do |scope|
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "update.rb", context: context)
+                  scope.create(directory: scope.destination("update"))
+                  scope.within(source: "update", destination: "update") do |scope|
+                    scope.copy(file: "authorizer.rb", context: context)
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "endpoint.rb", context: context)
+                  scope.copy(file: "null.rb", context: context)
+                  scope.copy(file: "presenter.rb", context: context)
+                  scope.copy(file: "model.rb", context: context)
+                end
+                scope.copy(file: "sessions.rb", context: context)
+                scope.create(directory: scope.destination("sessions"))
+                scope.within(source: "sessions", destination: "sessions") do |scope|
+                  scope.copy(file: "create.rb", context: context)
+                  scope.create(directory: scope.destination("create"))
+                  scope.within(source: "create", destination: "create") do |scope|
+                    scope.copy(file: "authorizer.rb", context: context)
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "destroy.rb", context: context)
+                  scope.create(directory: scope.destination("destroy"))
+                  scope.within(source: "destroy", destination: "destroy") do |scope|
+                    scope.copy(file: "control.rb", context: context)
+                    scope.copy(file: "denormalizer.rb", context: context)
+                    scope.copy(file: "normalizer.rb", context: context)
+                    scope.copy(file: "validator.rb", context: context)
+                  end
+                  scope.copy(file: "endpoint.rb", context: context)
+                  scope.copy(file: "presenter.rb", context: context)
+                  scope.copy(file: "model.rb", context: context)
+                end
+                scope.copy(file: "errors.rb", context: context)
+                scope.create(directory: scope.destination("errors"))
+                scope.within(source: "errors", destination: "errors") do |scope|
+                  scope.copy(file: "denormalizer.rb", context: context)
+                  scope.copy(file: "presenter.rb", context: context)
+                end
+              end
+            end
+            scope.create(directory: scope.destination("spec"))
+            scope.within(source: "spec", destination: "spec") do |scope|
+              scope.copy(file: "spec_helper.rb", context: context)
+              scope.create(directory: scope.destination("lib"))
+
+            end
           end
-        end
-      end
-
-      private def seupt_config(architect)
-        architect.create(directory: "config")
-        architect.within(source: "config", destination: "config") do |scope|
-          scope.copy(file: )
-        end
-      end
-
-      private def subresource(architect, name)
-        architect.copy(file: "#{name}.rb", context: context)
-        architect.create(directory: architect.destination(name))
-        architect.within(source: name, destination: name) do |scope|
-          scope.copy(file: "authorizer.rb", context: context)
-          scope.copy(file: "control.rb", context: context)
-          scope.copy(file: "denormalizer.rb", context: context)
-          scope.copy(file: "normalizer.rb", context: context)
-          scope.copy(file: "validator.rb", context: context)
         end
       end
 
