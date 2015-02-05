@@ -3,6 +3,7 @@
 require "shogun/command"
 require "pry"
 
-# shogun [namespace] [command] [options]
+# shogun [namespace] [command] [parameters]
 # shogun blankapi generate flags
+# shogun blankapi new
 Shogun::Command.new(*ARGV).execute

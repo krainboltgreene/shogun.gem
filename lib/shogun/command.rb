@@ -16,7 +16,7 @@ module Shogun
     def execute
       case @command
       when "new" then
-        ::Showgun::Command::New.new(@namespace, *@parameters).execute
+        ::Shogun::Command::New.new(@namespace, *@parameters).execute
       when "generate" then
         ::Shogun::Command::Generate.new(@namespace, *@parameters).execute
       when "database" then
