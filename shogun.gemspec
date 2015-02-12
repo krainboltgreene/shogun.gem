@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "http://krainboltgreene.github.io/shogun.gem"
   spec.license = "MIT"
 
-  spec.files = Dir[File.join("lib", "**", "*")]
+  spec.files = Dir[File.join("lib", "**", "*"), File.join("scaffold", "**", "*")]
   spec.executables = Dir[File.join("bin", "**", "*")].map! { |f| f.gsub(/bin\//, "") }
   spec.test_files = Dir[File.join("test", "**", "*"), File.join("spec", "**", "*")]
   spec.require_paths = ["lib"]
