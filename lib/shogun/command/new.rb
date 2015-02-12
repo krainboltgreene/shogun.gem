@@ -14,8 +14,9 @@ module Shogun
         architecture(source: scaffold_directory, destination: current_directory) do |architect|
           architect.create(directory: architect.destination(namespace))
           architect.within(source: "project", destination: namespace) do |scope|
-            scope.copy(file: ".gitignore", context: context)
+            scope.copy(file: "gitignore", as: ".gitignore", context: context)
             scope.copy(file: ".rspec", context: context)
+            scope.copy(file: ".env", context: context)
             scope.copy(file: ".ruby-gemset", context: context)
             scope.copy(file: ".ruby-version", context: context)
             scope.copy(file: ".slugignore", context: context)
