@@ -40,7 +40,7 @@ module Shogun
       end
 
       private def scaffold_directory
-        File.join(gem_directory, "scaffold", "resource")
+        File.join(gem_directory, "scaffold", "generate")
       end
 
       private def namespace_directory
