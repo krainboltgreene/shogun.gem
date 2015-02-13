@@ -5,6 +5,8 @@ module Shogun
         @namespace = namespace
         @command = command
         @parameters = parameters
+
+        require File.join(Dir.pwd, "lib", @namespace)
       end
 
       def execute
