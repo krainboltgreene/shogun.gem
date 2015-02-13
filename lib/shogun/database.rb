@@ -33,11 +33,11 @@ module Shogun
 
     def initialize(logger:)
       @logger = logger
-      ActiveRecord::LogSubscriber.logger = @logger
-      ActiveRecord::LogSubscriber.colorize_logging = false
       ActiveRecord::Base.time_zone_aware_attributes = true
       ActiveRecord::Base.default_timezone = (timezone || default_timezone).to_sym
       ActiveRecord::Base.logger = @logger
+      ActiveRecord::LogSubscriber.logger = @logger
+      ActiveRecord::LogSubscriber.colorize_logging = false
       ActiveRecord::Base.establish_connection(uri)
     end
 
