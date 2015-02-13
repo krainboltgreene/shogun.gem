@@ -63,6 +63,10 @@ Contributing
 
 Changelog
 =========
+
+  - 6.4.0:
+    * Now environment variables will be pulled and required with the console command
+  - 6.3.0..6.1.1: ???
   - 6.1.0:
     * Created classes and a structure for the different bin commands
     * Created a scaffolding system using architecture
