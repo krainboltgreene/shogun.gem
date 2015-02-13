@@ -1,6 +1,11 @@
 require "architecture/dsl"
 require "active_support/all"
 require "shogun"
+require "envied"
+require "dotenv"
+
+Dotenv.load
+ENVied.require
 
 module Shogun
   class Command

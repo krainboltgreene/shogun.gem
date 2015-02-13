@@ -64,6 +64,8 @@ Contributing
 Changelog
 =========
 
+  - 6.4.1:
+    * The order of the env variables made a difference, now it comes first
   - 6.4.0:
     * Now environment variables will be pulled and required with the console command
   - 6.3.0..6.1.1: ???
