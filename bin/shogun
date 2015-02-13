@@ -2,13 +2,5 @@
 
 require "shogun/command"
 require "pry"
-require "envied"
-require "dotenv"
 
-Dotenv.load
-ENVied.require
-
-# shogun [namespace] [command] [parameters]
-# shogun blankapi generate flags
-# shogun blankapi new
 Shogun::Command.new(*ARGV).execute
