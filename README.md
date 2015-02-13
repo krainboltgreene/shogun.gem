@@ -64,6 +64,8 @@ Contributing
 Changelog
 =========
 
+  - 6.4.2:
+    - Still had problems with order of loading
   - 6.4.1:
     * The order of the env variables made a difference, now it comes first
   - 6.4.0:
