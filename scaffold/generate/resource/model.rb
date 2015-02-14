@@ -5,7 +5,7 @@ module {{namespace_module}}
 
       self.table_name = NAMESPACE
 
-      has_many :sessions, class_name: "{{namespace_module}}::Sessions::Model", foreign_key: "{{resource_singular}}_id", dependent: :destroy
+      # has_many :relationship, class_name: "{{namespace_module}}::Relationship::Model", foreign_key: "{{resource_singular}}_id", dependent: :destroy
 
       def self.create!
         ActiveRecord::Migration.create_table table_name, force: true, id: :uuid do |table|
