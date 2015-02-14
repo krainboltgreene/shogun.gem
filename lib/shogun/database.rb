@@ -24,10 +24,10 @@ module Shogun
       ActiveRecord::Base.connection
     end
 
-    def self.setup!(logger:)
+    def self.create!(logger:)
       new(logger: logger).tap do
         connection.enable_extension("uuid-ossp")
-        ActiveRecord::Base.descendants.each(&:setup!)
+        ActiveRecord::Base.descendants.each(&:create!)
       end
     end
 
