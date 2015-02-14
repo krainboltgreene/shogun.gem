@@ -84,7 +84,7 @@ module Shogun
         @resource.downcase
       end
 
-      private def resource_signular
+      private def resource_singular
         resource.singular
       end
     end
