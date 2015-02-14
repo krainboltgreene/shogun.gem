@@ -8,7 +8,7 @@ module {{namespace_module}}
 
       belongs_to :account, class_name: "{{namespace_module}}::Accounts::Model", foreign_key: "account_id"
 
-      def self.setup!
+      def self.create!
         ActiveRecord::Migration.create_table table_name, force: true, id: :uuid do |table|
           table.string :account_id, null: false
           table.index :account_id
