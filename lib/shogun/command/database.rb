@@ -6,6 +6,10 @@ module Shogun
         @command = command
         @parameters = parameters
 
+        require "envied"
+        require "dotenv"
+        Dotenv.load
+        ENVied.require
         require File.join(Dir.pwd, "lib", @namespace)
       end
 

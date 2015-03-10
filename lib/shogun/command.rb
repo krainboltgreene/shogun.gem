@@ -1,9 +1,3 @@
-require "envied"
-require "dotenv"
-
-Dotenv.load
-ENVied.require
-
 require "architecture/dsl"
 require "active_support/all"
 require "shogun"
