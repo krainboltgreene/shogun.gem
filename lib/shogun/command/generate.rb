@@ -7,6 +7,11 @@ module Shogun
         @namespace = namespace
         @resource = resource
         @parameters = parameters
+
+        require "envied"
+        require "dotenv"
+        Dotenv.load
+        ENVied.require
       end
 
       def execute
