@@ -1,6 +1,8 @@
 shogun
 --------
 
+[![Join the chat at https://gitter.im/krainboltgreene/shogun.gem](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/krainboltgreene/shogun.gem?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
   - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/shogun.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/shogun.gem)
   - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/shogun.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/shogun.gem)
   - [![Build](http://img.shields.io/travis-ci/krainboltgreene/shogun.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/shogun.gem)
