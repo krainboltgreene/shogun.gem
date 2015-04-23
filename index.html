@@ -94,7 +94,7 @@
 
 <p>Add this line to your application's Gemfile:</p>
 
-<pre><code>gem "shogun", "~&gt; 3.2"
+<pre><code>gem "shogun", "~&gt; 4.0"
 </code></pre>
 
 <p>And then execute:</p>
@@ -122,6 +122,64 @@
 <a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h1>
 
 <ul>
+<li>6.4.2:
+
+<ul>
+<li>Still had problems with order of loading</li>
+</ul>
+</li>
+<li>6.4.1:
+
+<ul>
+<li>The order of the env variables made a difference, now it comes first</li>
+</ul>
+</li>
+<li>6.4.0:
+
+<ul>
+<li>Now environment variables will be pulled and required with the console command</li>
+</ul>
+</li>
+<li>6.3.0..6.1.1: ???</li>
+<li>6.1.0:
+
+<ul>
+<li>Created classes and a structure for the different bin commands</li>
+<li>Created a scaffolding system using architecture</li>
+</ul>
+</li>
+<li>6.0.0:
+
+<ul>
+<li>Adding more tests for validators</li>
+<li>Renaming the "out" method for validators to make more sense</li>
+</ul>
+</li>
+<li>5.0.0: We "skipped" this version by accident.</li>
+<li>4.0.1:
+
+<ul>
+<li>We forgot to provide an private interface for the includes list.</li>
+</ul>
+</li>
+<li>4.0.0:
+
+<ul>
+<li>... So we totally misunderstood how <code>links</code> and <code>linked</code> keys works in JSONAPI. We've rectifid the issue and now it's a little more robust.</li>
+</ul>
+</li>
+<li>3.4.0:
+
+<ul>
+<li>Same as 3.3.0, accidentally released as 3.4.0.</li>
+</ul>
+</li>
+<li>3.3.0:
+
+<ul>
+<li>We no longer enforce referrer host sameness, preventing browser clients from using the API.</li>
+</ul>
+</li>
 <li>3.2.0:
 
 <ul>
@@ -208,12 +266,22 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
           <span class="left-tail"></span>
           <span class="right-tail"></span>
         </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
         <span class="octocat"></span>
       </footer>
 
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-18715035-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
