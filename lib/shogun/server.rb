@@ -9,8 +9,6 @@ module Shogun
       @rack.use(Rack::Protection::FrameOptions)
       @rack.use(Rack::Protection::PathTraversal)
       @rack.use(Rack::Protection::IPSpoofing)
-      @rack.use(ActiveRecord::ConnectionAdapters::ConnectionManagement)
-      @rack.use(ActiveRecord::QueryCache)
       @rack.use(Rack::Chunker)
       @rack.use(Rack::AcceptSetter, accept_types)
       @rack.use(Rack::ContentLengthSetter)

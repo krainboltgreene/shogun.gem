@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir[File.join("test", "**", "*"), File.join("spec", "**", "*")]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "activerecord", "~> 4.1"
   spec.add_runtime_dependency "activesupport", "~> 4.1"
   spec.add_runtime_dependency "adamantium", "~> 0.2"
   spec.add_runtime_dependency "architecture", "~> 5.2"
