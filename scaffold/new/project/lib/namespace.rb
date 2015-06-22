@@ -29,4 +29,8 @@ module {{namespace_module}}
       end
     end
   end
+
+  def self.store
+    ROM.env
+  end
 end
