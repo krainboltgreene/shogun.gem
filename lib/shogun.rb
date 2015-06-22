@@ -11,7 +11,7 @@ require "rack-runtime"
 require "rack-log"
 require "rack/cors"
 require "scrawl"
-require "active_record"
+require "rom"
 
 module Shogun
   require_relative "shogun/authorizer"

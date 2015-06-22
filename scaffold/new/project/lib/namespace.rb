@@ -14,9 +14,12 @@ Dotenv.load
 ENVied.require
 
 module {{namespace_module}}
-  require_relative "{{namespace}}/errors"
-  require_relative "{{namespace}}/accounts"
-  require_relative "{{namespace}}/sessions"
+  ROM.tap do |rom|
+    rom.setup(:memory)
+    require_relative "{{namespace}}/errors"
+    require_relative "{{namespace}}/accounts"
+    require_relative "{{namespace}}/sessions"
+  end.finalize
 
   def self.logger(io: STDOUT, level: ::Logger.const_get(ENV["APPLICATION_LOG_LEVEL"]))
     @logger ||= ::Logger.new(STDOUT).tap do |log|
@@ -25,5 +28,9 @@ module {{namespace_module}}
         Scrawl.new(level: level, time: stamp.to_datetime.rfc3339, name: name, message: message.strip).inspect + "\n"
       end
     end
+  end
+
+  def self.store
+    ROM.env
   end
 end

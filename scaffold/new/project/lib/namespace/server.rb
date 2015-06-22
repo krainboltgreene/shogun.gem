@@ -6,24 +6,31 @@ module {{namespace_module}}
     include Shogun::Server
 
     VERSION = "1.0.0"
+
     ORIGIN_WHITELIST = [ENV["CLIENT_HOST"]]
+
     DESERIALIZATION_MAP = {
       "*/*" => Oj,
       "application/vnd.{{namespace}}+json; version=#{VERSION}" => Oj,
       "application/json" => Oj
     }
+
     SERIALIZATION_MAP = {
       "application/vnd.{{namespace}}+json; version=#{VERSION}" => Oj
     }
+
     DEFAULT_SERIALIZER = Oj
+
     ACCEPT_TYPES = [
       "application/vnd.{{namespace}}+json; version=#{VERSION}",
       "application/json"
     ]
+
     ENDPOINTS = ->(router) do
       Accounts::Endpoint.new(router: router)
       Sessions::Endpoint.new(router: router)
     end
+
     BEARER = ->(token) do
       begin
         JWT.decode(token, ENV["APPLICATION_SESSION_SECRET"]).first
@@ -31,6 +38,7 @@ module {{namespace_module}}
         {}
       end
     end
+
     CORS = ->(policy) do
       policy.allow do
         origins(ENV["SERVER_HOST"], ENV["CLIENT_HOST"])

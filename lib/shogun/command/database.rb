@@ -16,9 +16,9 @@ module Shogun
       def execute
         case @command
           when "create" then
-            ::Shogun::Database.create!(logger: Logger.new(STDOUT))
+
           when "console" then
-            ::Shogun::Database.new(logger: Logger.new(STDOUT))
+
             binding.pry
         end
       end
