@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module Create
       class Control
-        include Shogun::Control
         include {{resource_module}}
+        include Shogun::Control
 
         def initialize(payload:)
           @normalizer = Normalizer.new(raw: payload.to_hash)

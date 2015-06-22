@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module List
       class Validator
-        include Shogun::Validator
         include Accounts
+        include Shogun::Validator
 
         INCLUDES_ALLOWED = %w||
         FIELDS_ALLOWED = %w|updated_at destroyed_at href created_at name email username signature id meta links linked|

@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module Update
       class Normalizer
-        include Shogun::Normalizer
         include {{resource_module}}
+        include Shogun::Normalizer
 
         METADATA = %w|id|
         ATTRIBUTES = %w|attirbute|

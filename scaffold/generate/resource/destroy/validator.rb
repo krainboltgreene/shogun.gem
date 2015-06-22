@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module Destroy
       class Validator
-        include Shogun::Validator
         include {{resource_module}}
+        include Shogun::Validator
 
         ID_MATCH = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 

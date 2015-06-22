@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module List
       class Normalizer
-        include Shogun::Normalizer
         include {{resource_module}}
+        include Shogun::Normalizer
 
         METADATA = %w|limit filters includes fields|
         LIST_DELIMITER = /\s*,\s*/

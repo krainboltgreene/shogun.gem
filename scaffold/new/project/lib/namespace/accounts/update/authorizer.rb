@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module Update
       class Authorizer
-        include Shogun::Authorizer
         include Accounts
+        include Shogun::Authorizer
 
         def initialize(requester:, resource:)
           if requester

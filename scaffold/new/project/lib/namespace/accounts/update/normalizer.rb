@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module Update
       class Normalizer
-        include Shogun::Normalizer
         include Accounts
+        include Shogun::Normalizer
 
         METADATA = %w|id|
         ATTRIBUTES = %w|signature name email username|

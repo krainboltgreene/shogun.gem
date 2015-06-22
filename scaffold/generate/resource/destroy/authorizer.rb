@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module Destroy
       class Authorizer
-        include Shogun::Authorizer
         include {{resource_module}}
+        include Shogun::Authorizer
 
         def initialize(requester:, resource:)
           if requester

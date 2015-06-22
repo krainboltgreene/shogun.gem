@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module List
       class Control
-        include Shogun::Control
         include Accounts
+        include Shogun::Control
 
         def initialize(payload:)
           @normalizer = Normalizer.new(raw: payload.to_hash)

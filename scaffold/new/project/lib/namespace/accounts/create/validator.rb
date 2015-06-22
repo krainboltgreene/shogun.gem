@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module Create
       class Validator
-        include Shogun::Validator
         include Accounts
+        include Shogun::Validator
 
         EMAIL_MATCH = /^[^@\s]+@([^@\s]+\.)+[^@\s]+$/
         PASSWORD_RANGE = 8..1024

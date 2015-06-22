@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module Create
       class Denormalizer
-        include Shogun::Denormalizer
         include {{resource_module}}
+        include Shogun::Denormalizer
 
         MAPPING = {
           "id" => "id",

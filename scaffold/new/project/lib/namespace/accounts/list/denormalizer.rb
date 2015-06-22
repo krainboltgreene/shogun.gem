@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module List
       class Denormalizer
-        include Shogun::Denormalizer
         include Accounts
+        include Shogun::Denormalizer
 
         MAPPING = {
           "id" => "id",

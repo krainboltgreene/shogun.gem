@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module List
       class Normalizer
-        include Shogun::Normalizer
         include Accounts
+        include Shogun::Normalizer
 
         METADATA = %w|limit filters includes fields|
         LIST_DELIMITER = /\s*,\s*/

@@ -1,8 +1,8 @@
 module {{namespace_module}}
   module {{resource_module}}
     class Presenter
-      include Shogun::Presenter
       include {{resource_module}}
+      include Shogun::Presenter
 
       def id
         source.id

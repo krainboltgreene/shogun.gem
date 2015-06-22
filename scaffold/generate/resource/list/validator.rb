@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module List
       class Validator
-        include Shogun::Validator
         include {{resource_module}}
+        include Shogun::Validator
 
         INCLUDES_ALLOWED = %w||
         FIELDS_ALLOWED = %w|id created_at updated_at destroyed_at href meta links linked|

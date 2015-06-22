@@ -1,8 +1,8 @@
 module {{namespace_module}}
   module Accounts
     class Presenter
-      include Shogun::Presenter
       include Accounts
+      include Shogun::Presenter
 
       def id
         source.id

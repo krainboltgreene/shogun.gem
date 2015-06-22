@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module Show
       class Validator
-        include Shogun::Validator
         include Accounts
+        include Shogun::Validator
 
         ID_MATCH = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
         FIELDS_ALLOWED = %w|updated_at destroyed_at href created_at bio name email username signature id|

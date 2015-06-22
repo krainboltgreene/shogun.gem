@@ -2,8 +2,8 @@ module {{namespace_module}}
   module Accounts
     module Create
       class Normalizer
-        include Shogun::Normalizer
         include Accounts
+        include Shogun::Normalizer
 
         ATTRIBUTES = %w|signature username name email password|
 

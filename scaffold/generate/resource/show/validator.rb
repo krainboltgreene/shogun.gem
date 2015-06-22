@@ -2,8 +2,8 @@ module {{namespace_module}}
   module {{resource_module}}
     module Show
       class Validator
-        include Shogun::Validator
         include {{resource_module}}
+        include Shogun::Validator
 
         ID_MATCH = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
         FIELDS_ALLOWED = %w|id created_at updated_at destroyed_at href|
