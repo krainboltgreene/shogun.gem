@@ -4,6 +4,10 @@ module {{namespace_module}}
       include Accounts
       include Shogun::Presenter
 
+      register_as :presenter
+      relation NAMESPACE
+      model Model
+
       attribute :id
       attribute :signature
       attribute :username

@@ -6,7 +6,7 @@ module {{namespace_module}}
 
       register_as :presenter
       relation NAMESPACE
-      model Relation
+      model Model
 
       attribute :id
       attribute :href
