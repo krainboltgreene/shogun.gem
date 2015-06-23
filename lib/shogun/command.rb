@@ -18,8 +18,8 @@ module Shogun
       case @command
       when "new" then
         ::Shogun::Command::New.new(@namespace, *@parameters)
-      when "generate" then
-        ::Shogun::Command::Generate.new(@namespace, *@parameters)
+      when "generate-resource" then
+        ::Shogun::Command::Generate::Resource.new(@namespace, *@parameters)
       when "database" then
         ::Shogun::Command::Database.new(@namespace, *@parameters)
       when "console" then
