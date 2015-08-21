@@ -24,7 +24,7 @@
 /.env
 
 # Ignore application configuration
-/config/application.yml
+/config/*.yml
 
 # Ignoring the compiled assets
 /public/assets
