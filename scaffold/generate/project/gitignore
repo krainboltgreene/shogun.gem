@@ -7,14 +7,6 @@
 # Ignore bundler config
 /.bundle
 
-# Ignore all bundler caching
-/vendor/cache
-/vendor/ruby
-
-# Ignore the default SQLite database.
-/db/*.sqlite3*
-/db/*.sql
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -23,17 +15,5 @@
 /.ruby-env
 /.env
 
-# Ignore application configuration
-/config/*.yml
-
-# Ignoring the compiled assets
-/public/assets
-/public/uploads
-
 # Ignore documentation directory
 /doc
-
-# Ignoring provisioning files
-/cookbooks
-/.vagrant
-/*.paw
