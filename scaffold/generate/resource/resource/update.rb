@@ -1,4 +1,4 @@
-module {{namespace_module}}
+module {{name_as_module}}
   module {{resource_module}}
     module Update
       require_relative "update/authorizer"

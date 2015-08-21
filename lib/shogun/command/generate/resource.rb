@@ -1,14 +1,15 @@
 module Shogun
-  class Command
+  module Command
     module Generate
       class Resource
         include Architecture
         include Generate
 
-        def initialize(namespace, resource, *parameters)
+        def initialize(name:, namespace:, resource:, options:)
+          @name = name
           @namespace = namespace
           @resource = resource
-          @parameters = parameters
+          @options = options
 
           require "envied"
           require "dotenv"
@@ -34,6 +35,19 @@ module Shogun
           end
         end
 
+        private def context
+          {
+            name_as_module: name_as_module,
+            resource_module: resource_module,
+            namespace: namespace,
+            resource: resource
+          }
+        end
+
+        private def namespace_directory
+          File.join(current_directory, "lib", @namespace)
+        end
+
         private def scaffold_directory
           File.join(gem_directory, "scaffold", "generate", "resource")
         end
@@ -52,15 +66,6 @@ module Shogun
 
         private def resource_directory
           destination(@parameters.first)
-        end
-
-        private def context
-          {
-            namespace_module: namespace_module,
-            resource_module: resource_module,
-            namespace: namespace,
-            resource: resource
-          }
         end
 
         private def resource_module

@@ -19,10 +19,9 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir[File.join("test", "**", "*"), File.join("spec", "**", "*")]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "rom", "~> 0.6.2"
   spec.add_runtime_dependency "activesupport", "~> 4.1"
   spec.add_runtime_dependency "adamantium", "~> 0.2"
-  spec.add_runtime_dependency "architecture", "~> 5.2"
+  spec.add_runtime_dependency "architecture", "~> 6.0"
   spec.add_runtime_dependency "pry", "~> 0.9"
   spec.add_runtime_dependency "rack-accept_setter", "~> 1.0"
   spec.add_runtime_dependency "rack-authentication_bearer", "~> 1.0"
@@ -37,6 +36,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rack", "~> 1.5"
   spec.add_runtime_dependency "rake", "~> 10.1"
   spec.add_runtime_dependency "scrawl", "~> 1.0"
+  spec.add_runtime_dependency "commander", "~> 4.3"
+  spec.add_runtime_dependency "hamster", "~> 1.0"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "pry-doc", "~> 0.6"

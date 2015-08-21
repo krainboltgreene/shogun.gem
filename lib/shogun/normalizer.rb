@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_module}}
   module Normalizer
     def to_hash
       attributes.inject({}) do |hash, attribute|

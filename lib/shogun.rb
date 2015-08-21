@@ -15,8 +15,6 @@ require "rom"
 
 module Shogun
   require_relative "shogun/authorizer"
-  require_relative "shogun/control"
-  require_relative "shogun/database"
   require_relative "shogun/denormalizer"
   require_relative "shogun/dispatch"
   require_relative "shogun/endpoint"

@@ -1,4 +1,4 @@
-module {{namespace_module}}
+module {{name_as_module}}
   module {{resource_module}}
     class Endpoint
       include {{resource_module}}

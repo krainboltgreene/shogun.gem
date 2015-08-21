@@ -1,7 +1,6 @@
 module Shogun
-  class Command
+  module Command
     module Generate
-
       private def gem_directory
         Gem::Specification.find_by_name("shogun").gem_dir
       end
@@ -10,19 +9,8 @@ module Shogun
         Dir.pwd
       end
 
-      private def namespace_module
-        @namespace.camelcase
-      end
-
-      private def namespace
-        @namespace.downcase
-      end
-
-      private def namespace_directory
-        File.join(current_directory, "lib", @namespace)
-      end
-
-      require_relative "generate/resource"
+      require_relative "generate/project"
+      require_relative "generate/namespace"
     end
   end
 end

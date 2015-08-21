@@ -1,4 +1,4 @@
-module {{namespace_module}}
+module {{name_as_module}}
   module {{resource_module}}
     module List
       require_relative "list/control"

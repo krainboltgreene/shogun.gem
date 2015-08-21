@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_module}}
   module Endpoint
     private def route(verb:, matcher: nil, control:)
       Dispatch::Route.new(namespace: namespace, verb: verb, matcher: matcher, control: control)

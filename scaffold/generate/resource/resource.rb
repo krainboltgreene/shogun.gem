@@ -1,5 +1,5 @@
-module {{namespace_module}}
-  module {{resource_module}}
+module {{project_as_module}}
+  module {{resource_as_module}}
     NAMESPACE = "{{resource}}"
 
     require_relative "{{resource}}/create"
