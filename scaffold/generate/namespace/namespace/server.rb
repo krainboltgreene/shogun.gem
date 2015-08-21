@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_module}}
   module {{namespace_as_module}}
     module Server
       VERSION = "1.0.0"
