@@ -1,11 +1,5 @@
 #!/usr/bin/env puma
 
-require "envied"
-require "dotenv"
-
-Dotenv.load
-ENVied.require
-
 # The directory to operate out of.
 #
 # The default is the current directory.
