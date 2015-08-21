@@ -34,6 +34,11 @@ module Shogun
                 arc.copy(file: "shogun.rb")
                 arc.copy(directory: "shogun/")
               end
+
+              arc.create(directory: "spec/") do |arc|
+                arc.copy(file: "spec_helper.rb")
+                arc.copy(directory: "lib/")
+              end
             end
           end
         end
