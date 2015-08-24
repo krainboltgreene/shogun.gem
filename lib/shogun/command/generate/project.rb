@@ -13,7 +13,6 @@ module Shogun
             arc.create(directory: project)
             arc.within(source: "project/", destination: project) do |arc|
               arc.copy(file: "gitignore", as: ".gitignore")
-              arc.copy(file: "rspec", as: ".rspec")
               arc.copy(file: "env", as: ".env", context: context)
               arc.copy(file: "ruby-gemset", as: ".ruby-gemset", context: context)
               arc.copy(file: "ruby-version", as: ".ruby-version")
@@ -26,17 +25,22 @@ module Shogun
               arc.copy(file: "Rakefile")
               arc.copy(file: "README.md")
 
-              arc.create(directory: "config/") do |arc|
-                arc.copy(file: "puma.rb")
-              end
-
               arc.create(directory: "lib/") do |arc|
                 arc.copy(file: "shogun.rb")
                 arc.copy(directory: "shogun/")
+                arc.create(directory: @project)
+                arc.within(source: "project", destination: @project) do |arc|
+                  arc.copy(file: "server.rb", context: context)
+
+                  arc.within(directory: "config") do |arc|
+                    arc.copy(file: "puma.rb", context: context)
+                    arc.copy(file: "rack.rb", context: context)
+                  end
+                end
               end
 
               arc.create(directory: "spec/") do |arc|
-                arc.copy(file: "spec_helper.rb")
+                arc.copy(file: "spec_helper.rb", context: context)
                 arc.copy(directory: "lib/")
               end
             end

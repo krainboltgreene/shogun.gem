@@ -1,5 +1,7 @@
-module {{namespace_as_module}}
-  require_relative "{{namespace}}/server"
+require_relative "shogun"
+
+module {{project_as_module}}
+  require_relative "{{project_as_atom}}/server"
 
   def self.logger(io: STDOUT, level: ::Logger.const_get(ENV["APPLICATION_LOG_LEVEL"]))
     @logger ||= ::Logger.new(STDOUT).tap do |log|

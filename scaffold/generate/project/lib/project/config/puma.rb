@@ -21,13 +21,13 @@
 #
 # The default is “config.ru”.
 #
-rackup("config/rack.rb")
+rackup("{{project_as_atom}}/config/rack.rb")
 
 # Set the environment in which the rack's app will run. The value must be a string.
 #
 # The default is “development”.
 #
-environment(ENV["RACK_ENV"])
+environment(ENV["{{project_as_constant}}_RACK_ENV"])
 
 # Daemonize the server into the background. Highly suggest that
 # this be combined with “pidfile” and “stdout_redirect”.
@@ -64,7 +64,7 @@ quiet
 #
 # The default is “0, 16”.
 #
-threads(Integer(ENV["PUMA_THREADS_MIN"]), Integer(ENV["PUMA_THREADS_MAX"]))
+threads(Integer(ENV["{{project_as_constant}}_PUMA_THREADS_MIN"]), Integer(ENV["{{project_as_constant}}_PUMA_THREADS_MAX"]))
 
 # Bind the server to “url”. “tcp://”, “unix://” and “ssl://” are the only
 # accepted protocols.
@@ -102,7 +102,7 @@ threads(Integer(ENV["PUMA_THREADS_MIN"]), Integer(ENV["PUMA_THREADS_MAX"]))
 #
 # The default is “0”.
 #
-workers(Integer(ENV["PUMA_WORKERS"] || 0))
+workers(Integer(ENV["{{project_as_constant}}_PUMA_WORKERS"] || 0))
 
 # Code to run when a worker boots to setup the process before booting
 # the app.
@@ -136,11 +136,11 @@ workers(Integer(ENV["PUMA_WORKERS"] || 0))
 
 # Additional text to display in process listing
 #
-tag(ENV["APPLICATION_NAME"])
+tag(ENV["{{project_as_constant}}_APPLICATION_NAME"])
 
 # Change the default timeout of workers
 #
-worker_timeout(Integer(ENV["PUMA_WORKER_TIMEOUT"] || 60))
+worker_timeout(Integer(ENV["{{project_as_constant}}_PUMA_WORKER_TIMEOUT"] || 60))
 
 # === Puma control rack application ===
 
