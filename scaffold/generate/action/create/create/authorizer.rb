@@ -1,8 +1,7 @@
 module {{name_as_module}}
-  module {{resource_module}}
+  module {{resource_as_module}}
     module Create
       class Authorizer
-        include {{resource_module}}
 
         def initialize(requester:, resource:)
           if requester

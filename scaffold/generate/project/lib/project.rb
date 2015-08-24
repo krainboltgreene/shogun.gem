@@ -1,7 +1,16 @@
-require_relative "shogun"
+require "dotenv"
+require "envied"
+
+require "pg"
+require "rom"
+
+require "oj"
+require "jwt"
 
 module {{project_as_module}}
-  require_relative "{{project_as_atom}}/server"
+  Dotenv.load
+  ENVied.require
+  ROM.setup(:memory)
 
   def self.logger(io: STDOUT, level: ::Logger.const_get(ENV["APPLICATION_LOG_LEVEL"]))
     @logger ||= ::Logger.new(STDOUT).tap do |log|
@@ -15,4 +24,6 @@ module {{project_as_module}}
   def self.store
     ROM.env
   end
+
+  require_relative "{{project_as_atom}}/server"
 end

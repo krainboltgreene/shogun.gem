@@ -1,5 +1,5 @@
-module {{name_as_module}}
-  module {{resource_module}}
+module {{project_as_module}}
+  module {{resource_as_module}}
     module Create
       class Control
         EMPTY_HEADER = {}
@@ -16,7 +16,7 @@ module {{name_as_module}}
             @denormalizer = Denormalizer.new(object: @presenter)
             @status = OK
           else
-            @presenters = {{name_as_module}}::Presenters.new(resources: @validator.invalids, cast: Errors::Presenter)
+            @presenters = {{project_as_module}}::Presenters.new(resources: @validator.invalids, cast: Errors::Presenter)
             @denormalizer = Errors::Denormalizer.new(object: @presenters)
             @status = UNPROCESSABLE_ENTITY
           end
@@ -27,7 +27,7 @@ module {{name_as_module}}
         end
 
         private def status
-          @status || INTERNAL_SERVER_ERROR
+          @status || Control::INTERNAL_SERVER_ERROR
         end
 
         private def headers
