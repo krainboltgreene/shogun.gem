@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_module}}
   module Control
     CONTINUE = 100
     SWITCHING_PROTOCOLS = 101
@@ -70,9 +70,9 @@ module Shogun
 
       def to_a
         [
-          Shogun::Control::NOT_FOUND,
-          Shogun::Control::EMPTY_HEADER,
-          Shogun::Control::EMPTY_BODY
+          Control::NOT_FOUND,
+          Control::EMPTY_HEADER,
+          Control::EMPTY_BODY
         ]
       end
     end

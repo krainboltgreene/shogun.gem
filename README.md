@@ -61,6 +61,18 @@ Contributing
   5. Create new Pull Request
 
 
+Todo
+====
+
+  - [x] namespace scaffold
+  - [ ] project scaffold
+  - [ ] action scaffold
+  - [ ] error scaffold
+  - [ ] resource scaffold
+  - [ ] session scaffold
+  - [ ] account scaffold
+
+
 Changelog
 =========
 

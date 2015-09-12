@@ -1,7 +1,6 @@
 module Shogun
   module Verifier
     class Uniqueness
-
       def initialize(field:, data:, list: Hamster::EmptyVector)
         @field = field
         @data = data

@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_atom}}
   class Presenters
     include Enumerable
 
@@ -29,13 +29,9 @@ module Shogun
     def links
       @links.inject() do |hash|
         includes.each do |relationship|
-          hash.store(template_name(namespace, relationship), template_path(namespace, relationship))
+          hash.store(template_name(NAMESPACE, relationship), template_path(namespace, relationship))
         end
       end
-    end
-
-    private def namespace
-      @cast.const_get("NAMESPACE")
     end
 
     private def includes

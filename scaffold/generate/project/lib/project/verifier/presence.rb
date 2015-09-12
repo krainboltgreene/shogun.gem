@@ -1,7 +1,7 @@
-module Shogun
+module {{project_as_module}}
   module Verifier
     class Presence
-      EMPTY_STRING = ""
+      EMPTY_STRING = "".freeze
 
       def initialize(field:, data:)
         @field = field

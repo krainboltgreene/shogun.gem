@@ -1,6 +1,9 @@
 module Shogun
   module Verifier
     class Range
+      CONTEXT_MAXIMUM_KEY_NAME = "maximum".freeze
+      CONTEXT_MINIMUM_KEY_NAME = "minimum".freeze
+
       def initialize(field:, data:, range:)
         @field = field
         @data = data
@@ -21,8 +24,8 @@ module Shogun
 
       def context
         {
-          "maximum" => @range.max,
-          "minimum" => @range.min
+          CONTEXT_MAXIMUM_KEY_NAME => @range.max,
+          CONTEXT_MINIMUM_KEY_NAME => @range.min
         }
       end
     end

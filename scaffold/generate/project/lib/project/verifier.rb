@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_atom}}
   module Verifier
     require_relative "verifier/allowed"
     require_relative "verifier/match"

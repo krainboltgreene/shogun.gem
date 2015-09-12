@@ -1,6 +1,7 @@
-module Shogun
+module {{project_as_module}}
   module Verifier
     class Allowed
+      CONTEXT_KEY_NAME = "unallowed".freeze
 
       def initialize(field:, data:, list: Hamster::EmptyVector)
         @field = field
@@ -18,7 +19,7 @@ module Shogun
 
       def context
         {
-          "unallowed" => @data.reject(&method(:allowed?))
+          KEY_NAME => @data.reject(&method(:allowed?))
         }
       end
 

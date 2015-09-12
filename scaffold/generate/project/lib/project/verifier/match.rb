@@ -1,7 +1,7 @@
-module Shogun
+module {{project_as_module}}
   module Verifier
     class Match
-      KEY_NAME = "pattern"
+      CONTEXT_KEY_NAME = "pattern".freeze
 
       def initialize(field:, data:, comparison:)
         @field = field
@@ -24,7 +24,7 @@ module Shogun
       def context
         if @comparison.is_a?(Regexp)
           {
-            KEY_NAME => @comparison
+            CONTEXT_KEY_NAME => @comparison
           }
         end
       end
