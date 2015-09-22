@@ -10,7 +10,6 @@ module Shogun
       end
 
       require_relative "generate/project"
-      require_relative "generate/namespace"
     end
   end
 end
