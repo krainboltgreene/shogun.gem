@@ -9,8 +9,8 @@ program :version, Shogun::VERSION
 program :description, "The command line interface for Shogun's generators"
 program :help, "Author", "Kurtis Rainbolt-Greene <me@kurtisrainboltgreene.name>"
 
-command :"generate project" do |let|
-  let.syntax = "generate project PROJECT"
+command :"generate-project" do |let|
+  let.syntax = "generate-project {{name}}"
   let.description = "Creates a new bare Shogun project"
   let.action do |arguments, options|
     Shogun::Command::Generate::Project.new(project: arguments[0], options: options)
