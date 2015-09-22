@@ -19,7 +19,7 @@ module {{project_as_namespace}}
 
       def context
         {
-          KEY_NAME => @data.reject(&method(:allowed?))
+          CONTEXT_KEY_NAME => @data.reject(&method(:allowed?))
         }
       end
 
