@@ -21,5 +21,5 @@ RSpec.configure do |let|
   let.color = true
 
   # Output as a document string
-  let.default_formatter = "doc"
+  let.default_formatter = "documentation"
 end
