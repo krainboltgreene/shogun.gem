@@ -1,6 +1,10 @@
-/.foreman
-/Vendorfile
 /spec/
-/test/
 /doc/
 /.rvmrc
+Dockerfile
+docker-compose.yml
+.rsyncignore
+.*-environment
+.travis.yml
+README.md
+LICENSE
