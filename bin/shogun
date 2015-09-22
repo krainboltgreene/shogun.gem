@@ -13,6 +13,7 @@ command :"generate-project" do |let|
   let.syntax = "generate-project {{name}}"
   let.description = "Creates a new bare Shogun project"
   let.action do |arguments, options|
+    fail "You need to specify a project name. See: shogun generate-project --help" unless arguments[0]
     Shogun::Command::Generate::Project.new(project: arguments[0], options: options)
   end
 end
