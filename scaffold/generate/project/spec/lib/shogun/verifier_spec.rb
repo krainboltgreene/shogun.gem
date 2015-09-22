@@ -1,5 +1,5 @@
 require "spec_helper"
 
-RSpec.describe Shogun::Verifier do
+RSpec.describe {{project_as_namespace}}::Verifier do
 
 end

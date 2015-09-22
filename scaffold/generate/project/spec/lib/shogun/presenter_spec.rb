@@ -1,5 +1,5 @@
 require "spec_helper"
 
-RSpec.describe Shogun::Presenter do
+RSpec.describe {{project_as_namespace}}::Presenter do
 
 end

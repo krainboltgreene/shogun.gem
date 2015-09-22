@@ -1,4 +1,4 @@
-module {{project_as_atom}}
+module {{project_as_namespace}}
   class Presenters
     include Enumerable
 

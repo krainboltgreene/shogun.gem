@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Shogun::Verifier::Range do
+RSpec.describe {{project_as_namespace}}::Verifier::Range do
   let(:verifier) do
     described_class.new
   end

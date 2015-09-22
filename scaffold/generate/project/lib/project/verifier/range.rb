@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_namespace}}
   module Verifier
     class Range
       CONTEXT_MAXIMUM_KEY_NAME = "maximum".freeze

@@ -1,4 +1,4 @@
-module {{project_as_module}}
+module {{project_as_namespace}}
   module Control
     CONTINUE = 100
     SWITCHING_PROTOCOLS = 101

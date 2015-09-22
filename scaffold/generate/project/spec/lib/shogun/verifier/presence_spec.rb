@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Shogun::Verifier::Presence do
+RSpec.describe {{project_as_namespace}}::Verifier::Presence do
   let(:verifier) do
     described_class.new
   end

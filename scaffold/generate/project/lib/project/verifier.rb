@@ -1,4 +1,4 @@
-module {{project_as_atom}}
+module {{project_as_namespace}}
   module Verifier
     require_relative "verifier/allowed"
     require_relative "verifier/match"

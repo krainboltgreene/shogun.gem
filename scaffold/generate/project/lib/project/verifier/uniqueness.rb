@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_namespace}}
   module Verifier
     class Uniqueness
       def initialize(field:, data:, list: Hamster::EmptyVector)

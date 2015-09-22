@@ -1,4 +1,4 @@
-module {{project_as_module}}
+module {{project_as_namespace}}
   module Verifier
     class Match
       CONTEXT_KEY_NAME = "pattern".freeze

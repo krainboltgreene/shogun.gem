@@ -1,4 +1,4 @@
-module {{project_as_module}}
+module {{project_as_namespace}}
   module Server
     VERSION = "1.0.0"
 
@@ -15,7 +15,10 @@ module {{project_as_module}}
 
       rack.use(Rack::Runtime)
 
-      rack.use(Rack::Protection::HttpOrigin, origin_whitelist: [ENV["CLIENT_HOST"]])
+      origin_whitelist = [
+        ENVied.CLIENT_HOST, ENVied.SERVER_HOST
+      ]
+      rack.use(Rack::Protection::HttpOrigin, origin_whitelist: origin_whitelist)
 
       rack.use(Rack::Protection::EscapedParams)
 
@@ -29,16 +32,17 @@ module {{project_as_module}}
 
       rack.use(Rack::Chunker)
 
-      rack.use(Rack::AcceptSetter, [
-        "application/vnd.{{project_as_atom}}+json; version=#{VERSION}",
+      accepts = [
+        "application/vnd.{{project_as_token}}+json; version=#{ENVied.API_VERSION}",
         "application/json"
-      ])
+      ]
+      rack.use(Rack::AcceptSetter, accepts)
 
       rack.use(Rack::ContentLengthSetter)
 
       rack.use(Rack::AuthenticationBearer) do |token|
         begin
-          JWT.decode(token, ENV["APPLICATION_SESSION_SECRET"]).first
+          JWT.decode(token, ENVied.APPLICATION_SESSION_SECRET).first
         rescue JWT::DecodeError
           Hamster::EmptyHash
         end
@@ -46,25 +50,27 @@ module {{project_as_module}}
 
       rack.use(Rack::Cors) do |policy|
         policy.allow do
-          origins(ENV["SERVER_HOST"], ENV["CLIENT_HOST"])
+          origins(ENVied.SERVER_HOST, ENVied.CLIENT_HOST)
           resource("*", headers: :any, methods: [:get, :post, :patch, :post, :delete, :options, :head])
         end
       end
 
-      rack.use(Rack::BodyDeserializer, {
+      deserializers = {
         "*/*" => Oj,
-        "application/vnd.{{project_as_atom}}+json; version=#{VERSION}" => Oj,
+        "application/vnd.{{project_as_token}}+json; version=#{ENVied.API_VERSION}" => Oj,
         "application/json" => Oj
-      })
+      }
+      rack.use(Rack::BodyDeserializer, deserializers)
 
-      rack.use(Rack::BodySerializer, {
-        "application/vnd.{{project_as_atom}}+json; version=#{VERSION}" => Oj
-      }, Oj)
+      serializers = {
+        "application/vnd.{{project_as_token}}+json; version=#{ENVied.API_VERSION}" => Oj
+      }
+      rack.use(Rack::BodySerializer, serializers, Oj)
 
       rack.run(Shogun::Dispatch.new(logger: logger) do |router|
         Accounts::Endpoint.new(router: router)
         Sessions::Endpoint.new(router: router)
-      end
+      end)
     end
   end
 end

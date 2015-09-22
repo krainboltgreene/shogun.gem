@@ -1,4 +1,4 @@
-module {{project_as_module}}
+module {{project_as_namespace}}
   module Verifier
     class Allowed
       CONTEXT_KEY_NAME = "unallowed".freeze

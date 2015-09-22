@@ -4,12 +4,15 @@ variable :APPLICATION_LOG_LEVEL, :string
 variable :APPLICATION_SESSION_SECRET, :string
 variable :CLIENT_HOST, :string
 variable :SERVER_HOST, :string
+variable :API_VERSION, :string
 variable :PUMA_THREADS_MAX, :integer
 variable :PUMA_THREADS_MIN, :integer
 variable :PUMA_WORKERS, :integer
 variable :PUMA_WORKER_TIMEOUT, :integer
 variable :RACK_ENV, :string
-variable :PORT,:integer
+variable :SHOGUN_ENV, :string
+variable :BINDING, :string
+variable :PORT, :integer
 variable :DATABASE_POOL, :integer
 variable :DATABASE_REAP_FREQUENCY, :integer
 variable :DATABASE_TIMEZONE, :string

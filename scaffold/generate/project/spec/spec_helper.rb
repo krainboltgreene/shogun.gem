@@ -1,7 +1,7 @@
 require "codeclimate-test-reporter"
 require "pry"
 require "rspec"
-require_relative "../lib/shogun"
+require_relative File.join("..", "lib", "{{project_as_token}}")
 
 RSpec.configure do |let|
   let.before("suite") do
