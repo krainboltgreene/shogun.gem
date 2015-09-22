@@ -1,13 +1,12 @@
 require "codeclimate-test-reporter"
+
+CodeClimate::TestReporter.start
+
 require "pry"
 require "rspec"
 require_relative File.join("..", "lib", "{{project_as_token}}")
 
 RSpec.configure do |let|
-  let.before("suite") do
-    CodeClimate::TestReporter.start
-  end
-
   # Exit the spec after the first failure
   let.fail_fast = true
 
