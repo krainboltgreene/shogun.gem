@@ -29,10 +29,10 @@ module Shogun
               arc.create(directory: "lib/") do |arc|
                 arc.copy(file: "project.rb", as: "#{project_as_token}.rb", context: context)
                 arc.create(directory: project_as_token)
-                arc.within(source: "project", destination: project_as_token) do |arc|
+                arc.within(source: "project/", destination: project_as_token) do |arc|
                   arc.copy(file: "server.rb", context: context)
 
-                  arc.within(directory: "config") do |arc|
+                  arc.create(directory: "config/") do |arc|
                     arc.copy(file: "puma.rb", context: context)
                     arc.copy(file: "rack.rb", context: context)
                   end
@@ -41,7 +41,18 @@ module Shogun
 
               arc.create(directory: "spec/") do |arc|
                 arc.copy(file: "spec_helper.rb", context: context)
-                arc.copy(directory: "lib/")
+                arc.create(directory: "lib/") do |arc|
+                  arc.create(directory: project_as_token)
+                  arc.within(source: "project/", destination: project_as_token) do |arc|
+                    arc.create(directory: "verifier/") do |arc|
+                      arc.copy(file: "allowed_spec.rb", context: context)
+                      arc.copy(file: "match_spec.rb", context: context)
+                      arc.copy(file: "presence_spec.rb", context: context)
+                      arc.copy(file: "range_spec.rb", context: context)
+                      arc.copy(file: "uniqueness_spec.rb", context: context)
+                    end
+                  end
+                end
               end
             end
           end
