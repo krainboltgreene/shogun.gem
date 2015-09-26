@@ -11,8 +11,7 @@ module Shogun
 
           architecture(source: source, destination: destination) do |arc|
             arc.create(directory: project_as_token)
-            require "pry"
-            binding.pry
+
             arc.within(source: "project/", destination: project_as_token) do |arc|
               arc.copy(file: "gitignore", as: ".gitignore")
               arc.copy(file: "test-environment", as: ".test-environment", context: context)
