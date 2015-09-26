@@ -1,5 +1,5 @@
 api:
-  command: /usr/src/{{project_as_token}}/bin/bundler/puma -C /usr/src/{{project_as_token}/lib/{{project_as_token}}/config/puma.rb
+  command: /usr/src/{{project_as_token}}/bin/bundler/puma -C /usr/src/{{project_as_token}}/lib/{{project_as_token}}/config/puma.rb
   volumes:
     - /usr/src/{{project_as_token}}:/usr/src/{{project_as_token}}
     - .:/tmp/src/{{project_as_token}}
