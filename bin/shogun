@@ -18,13 +18,6 @@ command :"generate-project" do |let|
   end
 end
 
-command :"generate namespace" do |let|
-  let.syntax = "generate project PROJECT NAMESPACE"
-  let.description = "Creates a new Shogun project namespace"
-  let.action do |arguments, options|
-    Shogun::Command::Generate::Namespace.new(project: arguments[0], namespace: arguments[1], options: options)
-  end
-end
 command :"generate-resource" do |let|
   let.syntax = "generate project {{project-name}} {{resource-name}}"
   let.description = "Creates a new Shogun resource in the specified namespace"
