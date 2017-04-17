@@ -1,4 +1,4 @@
-module Shogun
+module {{Shogun}}
   module Validator
     def valid?
       verifiers.all?(&:valid?)

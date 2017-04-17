@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby -wKU
+
+source "https://rubygems.org"
+
+ruby "2.2.2"
+
+gem "shogun", "6.0.0"
+gem "puma", "2.10.2"
+gem "oj", "2.11.1"
+gem "jwt", "1.2.0"
+gem "pg", "0.17.1"
+gem "bcrypt", "3.1.9"
+gem "rom", "0.6.2"
+gem "envied", "0.8.1"
+gem "rspec", "3.1.0"
+gem "guard", "2.10.2"

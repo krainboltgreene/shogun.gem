@@ -1,4 +1,4 @@
-module Shogun
+module {{project_as_module}}
   module Denormalizer
     META_KEY = "meta"
     LINKS_KEY = "links"

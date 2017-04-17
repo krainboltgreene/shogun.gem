@@ -1,0 +1,8 @@
+tmp/
+logs/
+.git/
+.gitignore
+.slugignore
+.travis.yml
+LICENSE
+README.md

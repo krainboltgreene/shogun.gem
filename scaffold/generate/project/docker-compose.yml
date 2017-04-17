@@ -1,0 +1,21 @@
+api:
+  command: /usr/src/{{project_as_token}}/bin/bundler/puma -C /usr/src/{{project_as_token}}/lib/{{project_as_token}}/config/puma.rb
+  volumes:
+    - /usr/src/{{project_as_token}}:/usr/src/{{project_as_token}}
+    - .:/tmp/src/{{project_as_token}}
+  build: .
+  env_file: .development-environment
+  ports:
+   - "3000:3000"
+  links:
+   - postgres
+test:
+  command: /bin/bash
+  volumes:
+    - /usr/src/{{project_as_token}}:/usr/src/{{project_as_token}}
+  build: .
+  env_file: .test-environment
+  links:
+   - postgres
+postgres:
+  image: postgres:9.4

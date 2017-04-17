@@ -1,6 +1,27 @@
 #!/usr/bin/env ruby
 
+require "rubygems"
+require "commander/import"
+require "shogun/version"
 require "shogun/command"
-require "pry"
 
-Shogun::Command.new(*ARGV).execute
+program :version, Shogun::VERSION
+program :description, "The command line interface for Shogun's generators"
+program :help, "Author", "Kurtis Rainbolt-Greene <me@kurtisrainboltgreene.name>"
+
+command :"generate-project" do |let|
+  let.syntax = "generate-project {{project-name}}"
+  let.description = "Creates a new bare Shogun project"
+  let.action do |arguments, options|
+    fail "You need to specify a project name. See: shogun generate-project --help" unless arguments[0]
+    Shogun::Command::Generate::Project.new(project: arguments[0], options: options)
+  end
+end
+
+command :"generate-resource" do |let|
+  let.syntax = "generate project {{project-name}} {{resource-name}}"
+  let.description = "Creates a new Shogun resource in the specified namespace"
+  let.action do |arguments, options|
+    Shogun::Command::Generate::Resource.new(project: arguments[0], namespace: arguments[1], resource: arguments[2], options: options)
+  end
+end

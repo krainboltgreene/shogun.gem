@@ -148,13 +148,13 @@ module Shogun
 
       private def context
         {
-          namespace_module: namespace_module,
+          name_as_module: name_as_module,
           namespace: namespace,
           author: author
         }
       end
 
-      private def namespace_module
+      private def name_as_module
         @namespace.camelcase
       end
 
